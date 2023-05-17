@@ -4,15 +4,16 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-
 h1 {
-  font-size: 4rem !important;
+  font-size: 64px !important;
   font-weight: 400 !important;
-  color: #094d58;
+  color: #224957;
+  font-style: normal;
+  line-height: 80px;
 }
 
 h6 {
-  color: #094d58;
+  color: #224957;
 }
 
 input {
@@ -22,7 +23,7 @@ input {
   padding: 9px 12px;
   outline: none;
   border: none;
-  background-color: #094d58;
+  background-color: #224957;
   color: white;
 }
 
@@ -30,21 +31,19 @@ input :focus {
   outline: none;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: white;
   opacity: 1; /* Firefox */
 }
 
-.input-email{
+.input-email {
   margin-bottom: 40px;
-
 }
 
-.input-password{
+.input-password {
   margin-bottom: 40px;
-
 }
-
 
 .button {
   justify-content: center;
@@ -52,9 +51,11 @@ input :focus {
   padding: 9px 12px;
   gap: 8px;
   height: 50px;
+  font-size: 16px;
+  line-height: 20px;
   width: 300px;
   border: none;
-  background:#24d985;
+  background: #20df7f;
   border-radius: 10px;
   cursor: pointer;
   margin-bottom: 40px;
@@ -69,7 +70,7 @@ input :focus {
 }
 
 .button:hover {
-  background: #14917c;
+  background: #31bd77;
 }
 
 .button:hover .svg-icon {
@@ -126,7 +127,12 @@ input :focus {
   }
 }
 
-a{
-  color:black !important;
+a {
+  color: black !important;
   text-decoration: none !important;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
 }
