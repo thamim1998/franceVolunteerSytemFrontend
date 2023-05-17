@@ -20,14 +20,14 @@ export default function LoginComponent() {
       <div className="container">
         <h4 className="p-5">France Volunteer Administration System</h4>
         <h1 className="p-3">Sign in</h1>
-        <h6 className="p-3">Sign in and start managing the Volunteer</h6>
+        <h6 className="p-3 mb-4">Sign in and start managing the Volunteer</h6>
         <div className="form">
           <form onSubmit={handleSubmit}>
             <input
               type="email"
-              placeholder="email"
+              placeholder="Login"
               value={email}
-              className='mb-3'
+              className='input-email'
               onChange={(e) => setEmail(e.target.value)}
               required
             />
@@ -35,9 +35,9 @@ export default function LoginComponent() {
 
             <input
               type="password"
-              placeholder="password"
+              placeholder="Password"
               value={password}
-              className='mb-3'
+              className='input-password'
               onChange={(e) => setPassword(e.target.value)}
               required
             />
@@ -45,6 +45,7 @@ export default function LoginComponent() {
             {/* <button className="button-68" type="submit">Login</button> */}
             <button className="button">Login</button>
           </form>
+          <a href="#react">Forgot Password? </a>
         </div>
       </div>
     </div>
