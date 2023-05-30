@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Link} from 'react-router-dom'
 import './LoginComponent.css';
 
 export default function LoginComponent() {
@@ -16,7 +17,7 @@ export default function LoginComponent() {
   };
 
   return (
-    <div className="container-fluid text-center">
+    <div className="container-fluid login-component text-center">
       <div className="container">
         <h4 className="p-5">France Volunteer Administration System</h4>
         <h1 className="p-3">Sign in</h1>
@@ -42,10 +43,9 @@ export default function LoginComponent() {
               required
             />
             <br />
-            {/* <button className="button-68" type="submit">Login</button> */}
             <button className="button">Login</button>
           </form>
-          <a href="#react">Forgot Password? </a>
+          <Link to="#react">Forgot Password? </Link>
         </div>
       </div>
     </div>

@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
-body {
+.login-component body {
   font-family: "Roboto", sans-serif;
 }
 
-h1 {
+.login-component h1 {
   font-size: 64px !important;
   font-weight: 400 !important;
   color: #224957;
@@ -12,11 +12,11 @@ h1 {
   line-height: 80px;
 }
 
-h6 {
+.login-component h6 {
   color: #224957;
 }
 
-input {
+.login-component input {
   height: 50px;
   width: 300px;
   border-radius: 10px;
@@ -27,25 +27,25 @@ input {
   color: white;
 }
 
-input :focus {
+.login-component :focus {
   outline: none;
 }
 
-::placeholder {
+.login-component ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: white;
   opacity: 1; /* Firefox */
 }
 
-.input-email {
+.login-component .input-email {
   margin-bottom: 40px;
 }
 
-.input-password {
+.login-component .input-password {
   margin-bottom: 40px;
 }
 
-.button {
+.login-component .button {
   justify-content: center;
   align-items: center;
   padding: 9px 12px;
@@ -61,7 +61,7 @@ input :focus {
   margin-bottom: 40px;
 }
 
-.lable {
+.login-component .lable {
   line-height: 22px;
   font-size: 17px;
   color: #fff;
@@ -69,15 +69,15 @@ input :focus {
   letter-spacing: 1px;
 }
 
-.button:hover {
+.login-component .button:hover {
   background: #31bd77;
 }
 
-.button:hover .svg-icon {
+ .login-component .button:hover .svg-icon {
   animation: flickering 2s linear infinite;
 }
 
-@keyframes flickering {
+ @keyframes flickering {
   0% {
     opacity: 1;
   }
@@ -127,7 +127,7 @@ input :focus {
   }
 }
 
-a {
+.login-component a {
   color: black !important;
   text-decoration: none !important;
   font-style: normal;

@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import HomeComponent from "./components/HomeComponent/HomeComponent";
 import LoginComponent from "./components/LoginComponent/LoginComponent";
+import VolunteerList from "./components/VolunteerListComponent/VolunteerList";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginComponent />} />
         <Route path="/home" element={<HomeComponent />} />
+        <Route path="/volunteer/list" element={<VolunteerList />} />
       </Routes>
     </div>
   );
