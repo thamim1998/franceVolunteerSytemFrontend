@@ -10,6 +10,7 @@ function App() {
         <Route path="/" element={<LoginComponent />} />
         <Route path="/home" element={<HomeComponent />} />
         <Route path="/volunteer/list" element={<VolunteerList />} />
+        {/* <Route path="/:id"  component={MovieDetail} /> */}
       </Routes>
     </div>
   );

@@ -1,13 +1,342 @@
 import React, { useState } from "react";
 import SidebarComponent from "../common/SidebarComponent/SidebarComponent";
-
 import { GrSearchAdvanced } from "react-icons/gr";
-
 import "./VolunteerList.css";
+import { Link } from "react-router-dom";
+import ReactPaginate from "react-paginate";
 
 function VolunteerList() {
   const [input1, setInput1] = useState("");
   const [input2, setInput2] = useState("");
+  const [pageNumber, setPageNumber] = useState(0);
+
+  const usersPerPage = 10;
+
+  const pagesVisited = pageNumber * usersPerPage;
+
+  const user_data = [
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Ai My Luong",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+    {
+      name: "Thamimul Ansari",
+      email: "aimy1234@gmail.com",
+      phone_number: "+33745711753",
+      skills: "IT, English Teacher",
+      ID: "123456789",
+    },
+  ];
+
+  const displayUsers = user_data
+    .slice(pagesVisited, pagesVisited + usersPerPage)
+    .map((data, i) => (
+      <tr key={i}>
+        <td className="volunteer-name">
+          <Link to={`/volunteer/list/${data.ID}`}>{data.name}</Link>
+        </td>
+        <td>{data.email}</td>
+        <td>{data.phone_number}</td>
+        <td>{data.skills}</td>
+        <td>{data.ID}</td>
+      </tr>
+    ));
+
+  const pageCount = Math.ceil(user_data.length / usersPerPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
 
   const handleInputChange1 = (event) => {
     setInput1(event.target.value);
@@ -49,7 +378,7 @@ function VolunteerList() {
             placeholder="volunteer-id"
           />
           <br />
-  
+
           <select name="pets" id="pet-select">
             <option value="">status</option>
             <option value="dog">Dog</option>
@@ -84,79 +413,20 @@ function VolunteerList() {
                 <th scope="col">ID</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td  className="volunteer-name">Ai My Luong</td>
-                <td>aimy123@gmail.com</td>
-                <td>+33745711753</td>
-                <td>Education, English, IT</td>
-                <td>1234567</td>
-              </tr>
-              <tr>
-                <th scope="row" className="volunteer-name">Ai My Luong</th>
-                <td>aimy123@gmail.com</td>
-                <td>+33745711753</td>
-                <td>Education, English, IT</td>
-                <td>1234567</td>
-              </tr>
-              <tr>
-                <th scope="row" className="volunteer-name">Ai My Luong</th>
-                <td>aimy123@gmail.com</td>
-                <td>+33745711753</td>
-                <td>Education, English, IT</td>
-                <td>1234567</td>
-              </tr> <tr>
-                <th scope="row" className="volunteer-name">Ai My Luong</th>
-                <td>aimy123@gmail.com</td>
-                <td>+33745711753</td>
-                <td>Education, English, IT</td>
-                <td>1234567</td>
-              </tr> <tr>
-                <th scope="row" className="volunteer-name">Ai My Luong</th>
-                <td>aimy123@gmail.com</td>
-                <td>+33745711753</td>
-                <td>Education, English, IT</td>
-                <td>1234567</td>
-              </tr> <tr>
-                <th scope="row" className="volunteer-name">Ai My Luong</th>
-                <td>aimy123@gmail.com</td>
-                <td>+33745711753</td>
-                <td>Education, English, IT</td>
-                <td>1234567</td>
-              </tr> <tr>
-                <th scope="row" className="volunteer-name">Ai My Luong</th>
-                <td>aimy123@gmail.com</td>
-                <td>+33745711753</td>
-                <td>Education, English, IT</td>
-                <td>1234567</td>
-              </tr> <tr>
-                <th scope="row" className="volunteer-name">Ai My Luong</th>
-                <td>aimy123@gmail.com</td>
-                <td>+33745711753</td>
-                <td>Education, English, IT</td>
-                <td>1234567</td>
-              </tr> <tr>
-                <th scope="row" className="volunteer-name">Ai My Luong</th>
-                <td>aimy123@gmail.com</td>
-                <td>+33745711753</td>
-                <td>Education, English, IT</td>
-                <td>1234567</td>
-              </tr> <tr>
-                <th scope="row" className="volunteer-name">Ai My Luong</th>
-                <td>aimy123@gmail.com</td>
-                <td>+33745711753</td>
-                <td>Education, English, IT</td>
-                <td>1234567</td>
-              </tr> <tr>
-                <th scope="row" className="volunteer-name">Ai My Luong</th>
-                <td>aimy123@gmail.com</td>
-                <td>+33745711753</td>
-                <td>Education, English, IT</td>
-                <td>1234567</td>
-              </tr>
-            </tbody>
+            <tbody>{displayUsers}</tbody>
           </table>
         </div>
+        <ReactPaginate
+          previousLabel={"<"}
+          nextLabel={">"}
+          pageCount={pageCount}
+          onPageChange={changePage}
+          containerClassName={"paginationBttns"}
+          previousLinkClassName={"previousBttn"}
+          nextLinkClassName={"nextBttn"}
+          disabledClassName={"paginationDisabled"}
+          activeClassName={"paginationActive"}
+        />
       </div>
     </div>
   );
