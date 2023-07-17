@@ -40,14 +40,14 @@ function SidebarComponent() {
               </h5>
             </li>
           </div>
-          <div className="pt-1 pb-1">
+          {/* <div className="pt-1 pb-1">
             <li>
               <TbListDetails size={25} />{" "}
               <h5 className="list-text">
                 <Link to="#react">Volunteer detail</Link>
               </h5>
             </li>
-          </div>{" "}
+          </div>{" "} */}
           <div className="pt-1 pb-1">
             <li>
               <FaList size={25} />{" "}
@@ -56,14 +56,14 @@ function SidebarComponent() {
               </h5>
             </li>
           </div>{" "}
-          <div className="pt-1 pb-1">
+          {/* <div className="pt-1 pb-1">
             <li>
               <TbListDetails size={25} />{" "}
               <h5 className="list-text">
                 <Link to="#react">Event detail</Link>
               </h5>
             </li>
-          </div>{" "}
+          </div>{" "} */}
           <div className="pt-1 pb-1">
             <li>
               <MdOutlineEventNote size={25} />{" "}

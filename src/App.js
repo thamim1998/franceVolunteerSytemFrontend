@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import HomeComponent from "./components/HomeComponent/HomeComponent";
 import LoginComponent from "./components/LoginComponent/LoginComponent";
+import VolunteerDetail from "./components/VolunteerDetailComponent/VolunteerDetail";
 import VolunteerList from "./components/VolunteerListComponent/VolunteerList";
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
         <Route path="/" element={<LoginComponent />} />
         <Route path="/home" element={<HomeComponent />} />
         <Route path="/volunteer/list" element={<VolunteerList />} />
-        {/* <Route path="/:id"  component={MovieDetail} /> */}
+        <Route path="/volunteer/list/:id"  element={<VolunteerDetail/>} />
       </Routes>
     </div>
   );

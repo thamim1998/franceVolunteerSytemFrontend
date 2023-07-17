@@ -350,7 +350,7 @@ function VolunteerList() {
       <div>
         <SidebarComponent />
       </div>
-      <div className="list">
+      <div className="container list">
         <h4 className="mt-4 mb-4">Volunteer List</h4>
         <div className="search-bar pt-4 pb-3">
           <p> Search by</p>
