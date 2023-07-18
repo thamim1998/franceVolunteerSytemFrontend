@@ -1,7 +1,7 @@
 import React from "react";
 import { AiFillHome } from "react-icons/ai";
 import { FaList } from "react-icons/fa";
-import { TbListDetails, TbLogout } from "react-icons/tb";
+import { TbLogout } from "react-icons/tb";
 import {
   MdOutlineEventNote,
   MdOutlineAccountCircle,
@@ -52,7 +52,7 @@ function SidebarComponent() {
             <li>
               <FaList size={25} />{" "}
               <h5 className="list-text">
-                <Link to="#react">Event list</Link>
+                <Link to="/event/list">Event list</Link>
               </h5>
             </li>
           </div>{" "}
