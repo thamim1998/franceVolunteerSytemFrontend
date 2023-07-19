@@ -68,7 +68,7 @@ function SidebarComponent() {
             <li>
               <MdOutlineEventNote size={25} />{" "}
               <h5 className="list-text">
-                <Link to="#react">Create event</Link>
+                <Link to="/create/event">Create event</Link>
               </h5>
             </li>
           </div>{" "}
@@ -76,7 +76,7 @@ function SidebarComponent() {
             <li>
               <MdOutlineAccountCircle size={25} />{" "}
               <h5 className="list-text">
-                <Link to="#react">Create account</Link>
+                <Link to="/create/account">Create account</Link>
               </h5>
             </li>
           </div>

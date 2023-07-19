@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import CreateAccount from "./components/CreateAccountComponent/CreateAccount";
 import EventDetail from "./components/EventDetailComponent/EventDetail";
 import EventList from "./components/EventListComponent/EventList";
 import HomeComponent from "./components/HomeComponent/HomeComponent";
@@ -16,6 +17,7 @@ function App() {
         <Route path="/volunteer/list/:id"  element={<VolunteerDetail/>} />
         <Route path="/event/list"  element={<EventList/>} />
         <Route path="/event/list/:id"  element={<EventDetail/>} />
+        <Route path="/create/account"  element={<CreateAccount/>} />
       </Routes>
     </div>
   );

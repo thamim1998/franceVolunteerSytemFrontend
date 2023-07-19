@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400&family=Roboto:wght@300&display=swap");
+
+.account-form {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centered-input {
+  width: 600px; /* Adjust width as needed */
+  height: 400px; /* Adjust height as needed */
+  background-color: #edfaf2; /* Optional background color */
+  border: 1px solid #ccc; /* Optional border for visualization */
+  text-align: center;
+  padding: 20px;
+}
+
+.account-form .form-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.account-form h4 {
+  color: #224957;
+  font-family: Lexend Deca;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.account-form .form-details p {
+  color: #575656;
+  font-family: Lexend Deca;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.account-form .form-details input {
+  width: 402px;
+  height: 45px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: #d5f1ec;
+  outline: none;
+  border: none;
+}
+
+.account-form .create-button {
+  border-radius: 6px;
+  background: #a2e4bc;
+  width: 120px;
+  height: 30px;
+  flex-shrink: 0;
+  border: none;
+}
