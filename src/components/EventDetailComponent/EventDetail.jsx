@@ -58,7 +58,7 @@ function VolunteerDetail() {
               </ol>
             </div>
           </div>
-          <div className="row profile mt-2">
+          <div className="row desire mt-2">
             <h6 className="pt-2 pb-3">Address and Date Time</h6>
             <div className="col-6">
               <p>
