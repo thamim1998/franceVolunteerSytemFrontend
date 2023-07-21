@@ -1,0 +1,108 @@
+.create-event .form-content {
+  display: flex;
+}
+
+.create-event .form-content input {
+  width: 867px;
+  padding-bottom: 150px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: #f4f4f4;
+  border: none;
+  outline: none;
+  margin-left: 50px;
+}
+
+.create-event .form-content h6 {
+  color: #575656;
+  font-family: Lexend Deca;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.create-event .form-details {
+  display: flex;
+}
+
+.create-event .form-details .input-address {
+  width: 502px;
+  height: 45px;
+  border-radius: 6px;
+  background: #f4f4f4;
+  border: none;
+  outline: none;
+  margin-left: 10%;
+}
+
+.create-event .form-details .slot {
+  margin-left: 10%;
+}
+
+.create-event .form-details .slot input {
+  width: 192px;
+  height: 45px;
+  border-radius: 6px;
+  background: #f4f4f4;
+  border: none;
+  outline: none;
+}
+
+.create-event .form-date {
+  display: flex;
+}
+
+.create-event .form-date .input-date {
+  width: 156px;
+  height: 45px;
+  border-radius: 6px;
+  background: #f4f4f4;
+  border: none;
+  outline: none;
+}
+
+.create-event .form-date .start-date {
+  margin-left: 8%;
+}
+
+.create-event .form-date .end-date {
+  margin-left: 5%;
+}
+
+.create-event .form-date .input-points {
+  width: 192px;
+  height: 45px;
+  border-radius: 6px;
+  background: #f4f4f4;
+  border: none;
+  outline: none;
+  margin-left: 5%;
+}
+
+.create-event .form-date .points {
+  margin-left: 10%;
+}
+
+.create-event .input-time {
+  width: 192px;
+  height: 45px;
+  border-radius: 6px;
+  background: #f4f4f4;
+  border: none;
+  outline: none;
+  /* margin-left: 5%; */
+}
+
+.create-event .button {
+display: flex;
+justify-content: center;
+}
+
+.create-event .create-button {
+  border-radius: 6px;
+  background: #a2e4bc;
+  width: 120px;
+  height: 30px;
+  border: none;
+}
