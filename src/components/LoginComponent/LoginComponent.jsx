@@ -1,19 +1,39 @@
 import React, { useState } from "react";
-import {Link} from 'react-router-dom'
-import './LoginComponent.css';
+import { Link, useNavigate } from "react-router-dom";
+import "./LoginComponent.css";
+import axios from "axios";
+import { useAuth } from "../../utils/Auth";
 
 export default function LoginComponent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const auth = useAuth();
+  const navigate = useNavigate()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     console.log("Email:", email);
     console.log("Password:", password);
+    // http://localhost:8080/frvol/auth/signin
 
-    setEmail("");
-    setPassword("");
+    const verified = { email, password };
+
+    axios
+      .post("http://localhost:8080/frvol/auth/signin", verified)
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.message === "Successful") {
+          auth.login(response.data);
+          alert("login successful");
+         navigate("/volunteer/list", {replace:true})
+        } else {
+          alert("Login failed");
+        }
+      })
+      .catch((error) => {
+        alert("please your check username and password");
+      });
   };
 
   return (
@@ -28,7 +48,7 @@ export default function LoginComponent() {
               type="email"
               placeholder="Login"
               value={email}
-              className='input-email'
+              className="input-email"
               onChange={(e) => setEmail(e.target.value)}
               required
             />
@@ -38,7 +58,7 @@ export default function LoginComponent() {
               type="password"
               placeholder="Password"
               value={password}
-              className='input-password'
+              className="input-password"
               onChange={(e) => setPassword(e.target.value)}
               required
             />

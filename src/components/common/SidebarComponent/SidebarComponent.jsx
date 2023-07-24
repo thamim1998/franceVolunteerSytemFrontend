@@ -8,10 +8,19 @@ import {
   MdPassword,
 } from "react-icons/md";
 import "./SidebarComponent.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MyImage from "../SidebarComponent/AiMy.jpeg";
+import { useAuth } from "../../../utils/Auth";
 
 function SidebarComponent() {
+  const navigate = useNavigate();
+  const auth = useAuth()
+
+  const signOut = () => {
+  auth.logout()
+  console.log("auth singout");
+  navigate('/')
+  };
   return (
     <div className="sidebar">
       <div>
@@ -92,7 +101,7 @@ function SidebarComponent() {
             <li>
               <TbLogout size={25} />{" "}
               <h5 className="list-text">
-                <Link to="#react">Sign out</Link>
+                <Link to="/" onClick={signOut}>Sign out</Link>
               </h5>
             </li>
           </div>

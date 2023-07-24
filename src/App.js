@@ -7,20 +7,24 @@ import HomeComponent from "./components/HomeComponent/HomeComponent";
 import LoginComponent from "./components/LoginComponent/LoginComponent";
 import VolunteerDetail from "./components/VolunteerDetailComponent/VolunteerDetail";
 import VolunteerList from "./components/VolunteerListComponent/VolunteerList";
+import { AuthProvider } from "./utils/Auth";
+import { RequireAuth } from "./utils/RequireAuth";
 
 function App() {
   return (
     <div className="App">
-      <Routes>
+  <AuthProvider>
+  <Routes>
         <Route path="/" element={<LoginComponent />} />
         <Route path="/home" element={<HomeComponent />} />
-        <Route path="/volunteer/list" element={<VolunteerList />} />
-        <Route path="/volunteer/list/:id"  element={<VolunteerDetail/>} />
-        <Route path="/event/list"  element={<EventList/>} />
-        <Route path="/event/list/:id"  element={<EventDetail/>} />
-        <Route path="/create/account"  element={<CreateAccount/>} />
-        <Route path="/create/event"  element={<CreateEvent/>} />
+        <Route path="/volunteer/list" element={<RequireAuth><VolunteerList /></RequireAuth> } />
+        <Route path="/volunteer/list/:id"  element={<RequireAuth><VolunteerDetail /></RequireAuth> } />
+        <Route path="/event/list"  element={<RequireAuth><EventList /></RequireAuth> } />
+        <Route path="/event/list/:id"  element={<RequireAuth><EventDetail /></RequireAuth> } />
+        <Route path="/create/account"  element={<RequireAuth><CreateAccount /></RequireAuth> } />
+        <Route path="/create/event"  element={<RequireAuth><CreateEvent /></RequireAuth> } />
       </Routes>
+  </AuthProvider>
     </div>
   );
 }
