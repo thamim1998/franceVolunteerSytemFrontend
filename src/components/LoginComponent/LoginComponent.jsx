@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./LoginComponent.css";
 import axios from "axios";
 import { useAuth } from "../../utils/Auth";
+import { config } from "../../utils/Config";
 
 export default function LoginComponent() {
   const [email, setEmail] = useState("");
@@ -20,13 +21,15 @@ export default function LoginComponent() {
     const verified = { email, password };
 
     axios
-      .post("http://localhost:8080/frvol/auth/signin", verified)
+      .post(config.BASE_URL+'auth/signin', verified)
       .then((response) => {
         console.log(response.data);
         if (response.data.message === "Successful") {
           auth.login(response.data);
           alert("login successful");
          navigate("/volunteer/list", {replace:true})
+         localStorage.setItem('token', response.data.token)
+         localStorage.setItem('userId', response.data.userId)
         } else {
           alert("Login failed");
         }
