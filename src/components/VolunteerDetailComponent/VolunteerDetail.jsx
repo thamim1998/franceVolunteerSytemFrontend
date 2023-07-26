@@ -1,8 +1,17 @@
 import React from "react";
 import SidebarComponent from "../common/SidebarComponent/SidebarComponent";
 import "./VolunteerDetail.css";
+import user_data from "../../utils/volunteerData";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 function VolunteerDetail() {
+  const { id } = useParams();
+  const userDetails = user_data.find((data) => data.volunteerId === id);
+  useEffect(() => {
+    console.log("id", userDetails);
+  }, []);
+
   return (
     <div className="volunteer-detail">
       <div>
@@ -10,59 +19,72 @@ function VolunteerDetail() {
       </div>
       <div className="detail-content">
         <div className="container">
-          <h4 className="pt-4 pb-4">Guy Hawkins 1234567</h4>
+          <h4 className="pt-4 pb-4">
+            {" "}
+            {userDetails.firstName +
+              " " +
+              userDetails.lastName +
+              " " +
+              userDetails.volunteerId}{" "}
+          </h4>
           <div className="row profile">
             <h6 className="pt-2 pb-3">PROFILE</h6>
             <div className="col-4">
-              <p>First name: Hawkin</p>
-              <p>Last name: Guy</p>
+              <p>First name: {userDetails.firstName}</p>
+              <p>Last name: {userDetails.lastName}</p>
               <p>Year of birth: 1998</p>
             </div>
             <div className="col-4">
-              <p>Address: 85 Avenue de Fontainebleau, Le Kremlin Bicetre</p>
-              <p>Postal code: 94270</p>
-              <p>Country: France</p>
+              <p>Address: {userDetails.address}</p>
+              <p>Postal code: {userDetails.postalCode}</p>
+              <p>Country: {userDetails.country}</p>
             </div>
             <div className="col-4">
-              <p>Email: thamim1997@gmail.com</p>
-              <p>Phone number: 07 45 711 753</p>
+              <p>Email: {userDetails.email}</p>
+              <p>Phone number: {userDetails.phone_number}</p>
             </div>
           </div>
           <div className="row desire mt-2">
             <h6 className="pt-2 pb-3">DESIRES</h6>
             <div className="col-4">
               <p>Action areas:</p>
-
               <ol>
-                <li>Olympic Paris 2024</li>
-                <li>Environment</li>
-                <li>Education-Training-School support</li>
+                {userDetails.actionArea.map((data, i) => (
+                  <li key={i}>{data}</li>
+                ))}
               </ol>
             </div>
             <div className="col-4">
               <p>Mission Types</p>
 
               <ol>
-                <li>Support (Social and Professional)</li>
-                <li>Communication</li>
+                {userDetails.missionType.map((data, i) => (
+                  <li key={i}>{data}</li>
+                ))}
               </ol>
             </div>
             <div className="col-4">
               <p>Availabilities</p>
 
               <ol>
-                <li>Weekend during day</li>
-                <li>Weekend during day</li>
-                <li>Evening school holidays</li>
+                {userDetails.availablity.map((data, i) => (
+                  <li key={i}>{data}</li>
+                ))}
               </ol>
             </div>
           </div>
           <div className="row desire mt-2">
             <h6 className="pt-2 pb-3">SITUATION</h6>
             <div className="col-4">
-              <p>Professional situation:&nbsp;&nbsp; Student or school</p>
-              <p>Possible displacement: &nbsp;&nbsp; 0 - 100 km</p>
-              <p>Travel type: &nbsp;&nbsp; By public transportation</p>
+              <p>
+                Professional situation:&nbsp;&nbsp;{" "}
+                {userDetails.professionalSituation}
+              </p>
+              <p>
+                Possible displacement: &nbsp;&nbsp;
+                {userDetails.possibleDisplacement}
+              </p>
+              <p>Travel type: &nbsp;&nbsp; {userDetails.travelType}</p>
             </div>
             <div className="col-6">
               <p>

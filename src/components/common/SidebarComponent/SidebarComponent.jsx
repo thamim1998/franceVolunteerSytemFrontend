@@ -73,13 +73,13 @@ function SidebarComponent() {
       <div>
         <ul className="menu-list">
           <div className="pt-1 pb-1">
-            <li>
+            {/* <li>
               <AiFillHome size={25} />{" "}
               <h5 className="list-text">
                 {" "}
                 <Link to="/home">Home</Link>
               </h5>
-            </li>
+            </li> */}
           </div>
           <div className="pt-1 pb-1">
             <li>

@@ -7,6 +7,7 @@ import { AiOutlineCalendar } from "react-icons/ai";
 import { GiTimeTrap } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import ReactPaginate from "react-paginate";
+import event_list from "../../utils/eventData";
 
 
 export default function EventList() {
@@ -16,108 +17,6 @@ export default function EventList() {
   const usersPerPage = 5;
 
   const pagesVisited = pageNumber * usersPerPage;
-
-  const event_list = [
-    {
-      event_name: "Solidtary event Delivery Driver paris provided",
-      typeofmission: "Chauffer",
-      start_date: "01/08/2023",
-      address: "94280 France Villejuif",
-      is_regular: "Regular mission",
-      id: "123456776",
-    },
-    {
-      event_name: "Solidtaryevent",
-      typeofmission: "Chauffer",
-      start_date: "01/08/2023",
-      address: "94280 France Villejuif",
-      is_regular: "Regular mission",
-    },
-    {
-      event_name: "Solidtaryevent",
-      typeofmission: "Chauffer",
-      start_date: "01/08/2023",
-      address: "94280 France Villejuif",
-      is_regular: "Regular mission",
-    },
-    {
-      event_name: "Solidtaryevent",
-      typeofmission: "Chauffer",
-      start_date: "01/08/2023",
-      address: "94280 France Villejuif",
-      is_regular: "Regular mission",
-    },
-    {
-      event_name: "Solidtaryevent",
-      typeofmission: "Chauffer",
-      start_date: "01/08/2023",
-      address: "94280 France Villejuif",
-      is_regular: "Regular mission",
-    },
-    {
-      event_name: "Solidtaryevent",
-      typeofmission: "Chauffer",
-      start_date: "01/08/2023",
-      address: "94280 France Villejuif",
-      is_regular: "Regular mission",
-    },
-    {
-      event_name: "Solidtaryevent",
-      typeofmission: "Chauffer",
-      start_date: "01/08/2023",
-      address: "94280 France Villejuif",
-      is_regular: "Regular mission",
-    },
-    {
-      event_name: "Solidtaryevent",
-      typeofmission: "Chauffer",
-      start_date: "01/08/2023",
-      address: "94280 France Villejuif",
-      is_regular: "Regular mission",
-    },
-    {
-      event_name: "Solidtaryevent",
-      typeofmission: "Chauffer",
-      start_date: "01/08/2023",
-      address: "94280 France Villejuif",
-      is_regular: "Regular mission",
-    },
-    {
-      event_name: "Solidtaryevent",
-      typeofmission: "Chauffer",
-      start_date: "01/08/2023",
-      address: "94280 France Villejuif",
-      is_regular: "Regular mission",
-    },
-    {
-      event_name: "Solidtaryevent",
-      typeofmission: "Chauffer",
-      start_date: "01/08/2023",
-      address: "94280 France Villejuif",
-      is_regular: "Regular mission",
-    },
-    {
-      event_name: "Solidtaryevent",
-      typeofmission: "Chauffer",
-      start_date: "01/08/2023",
-      address: "94280 France Villejuif",
-      is_regular: "Regular mission",
-    },
-    {
-      event_name: "Solidtaryevent",
-      typeofmission: "Chauffer",
-      start_date: "01/08/2023",
-      address: "94280 France Villejuif",
-      is_regular: "Regular mission",
-    },
-    {
-      event_name: "Solidtaryevent",
-      typeofmission: "Chauffer",
-      start_date: "01/08/2023",
-      address: "94280 France Villejuif",
-      is_regular: "Regular mission",
-    },
-  ];
 
   const displayEvents = event_list
   .slice(pagesVisited, pagesVisited + usersPerPage)
@@ -138,7 +37,7 @@ export default function EventList() {
         </div>
         <div className="col-4">
           <button className=" btn btn-secondary detail-button">
-            <Link to={`/event/list/${list.id}`}>Detail</Link>
+            <Link to={`/event/list/${list.eventId}`}>Detail</Link>
           </button>
         </div>
       </div>
@@ -152,8 +51,7 @@ export default function EventList() {
           </p>
         </div>
         <div className="col-4">
-          <p>
-            {" "}
+          <p>          
             <span>
               <GiTimeTrap size={25} />
             </span>

@@ -8,6 +8,7 @@ import { config } from "../../utils/Config";
 export default function LoginComponent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loggedFailed, setLoggedfailed] = useState(false)
   const auth = useAuth();
   const navigate = useNavigate()
 
@@ -26,7 +27,6 @@ export default function LoginComponent() {
         console.log(response.data);
         if (response.data.message === "Successful") {
           auth.login(response.data);
-          alert("login successful");
          navigate("/volunteer/list", {replace:true})
          localStorage.setItem('token', response.data.token)
          localStorage.setItem('userId', response.data.userId)

@@ -4,8 +4,18 @@ import "./EventDetail.css";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { GiTimeTrap } from "react-icons/gi";
+import { useParams } from "react-router-dom";
+import event_list from "../../utils/eventData";
+import { useEffect } from "react";
 
 function VolunteerDetail() {
+  const { id } = useParams();
+  const eventDetails = event_list.find((data) => data.eventId === id);
+
+  useEffect(()=>{
+    console.log("EVENT", eventDetails);
+  })
+
   return (
     <div className="event-detail">
       <div>
@@ -14,28 +24,27 @@ function VolunteerDetail() {
       <div className="detail-content">
         <div className="container">
           <h4 className="pt-4">
-            Solidtary event Delivery Driver paris provided
+          {eventDetails.event_name}
           </h4>
-          <h4 className=" pb-4">EVENT ID: &nbsp;&nbsp; #1234567</h4>
+          <h4 className=" pb-4">EVENT ID: &nbsp;&nbsp; #{eventDetails.eventId}</h4>
           <div className="row desire mt-2">
-            <p className="pt-3">Posted on 06/10/2023</p>
+            <p className="pt-3">Posted on {eventDetails.postedOn}</p>
             <h6 className="pt-2 pb-3">Description de la mission</h6>
             <div className="col-8">
               <p>
-                I work as a Delivery Driver for the Super Chapelle solidarity
-                grocery store - Paris 18 in order to collect the goods.
+                {eventDetails.misssionDescription}.
               </p>
             </div>
             <div className="row">
               <div className="col-4">
                 <p>
-                  {" "}
-                  <b>Type de mission:</b> Chauffer{" "}
+                  
+                  <b>Type de mission:</b> {eventDetails.typeofmission}
                 </p>
               </div>
               <div className="col-4">
                 <p>
-                  <b>Status:</b> Open
+                  <b>Status:</b> {eventDetails.status}
                 </p>
               </div>
             </div>
@@ -44,17 +53,17 @@ function VolunteerDetail() {
             <div className="col-4">
               <h6 className="pt-2 pb-3">Needed Professional</h6>
               <ol>
-                <li>Olympic Paris 2024</li>
-                <li>Environment</li>
-                <li>Education-Training-School support</li>
+                {eventDetails.neededProfessional.map((data, i) => (
+                  <li key={i}>{data}</li>
+                ))}
               </ol>
             </div>
             <div className="col-6">
               <h6 className="pt-2 pb-3">Other information required</h6>
               <ol>
-                <li>Olympic Paris 2024</li>
-                <li>Environment</li>
-                <li>Education-Training-School support</li>
+                {eventDetails.otherInformation.map((data, i) => (
+                  <li key={i}>{data}</li>
+                ))}
               </ol>
             </div>
           </div>
@@ -62,31 +71,28 @@ function VolunteerDetail() {
             <h6 className="pt-2 pb-3">Address and Date Time</h6>
             <div className="col-6">
               <p>
-                {" "}
                 <span className="pt-3 pb-5">
                   <HiOutlineLocationMarker size={25} />
-                </span>{" "}
-                63 RUE DE LA CHAPELLE, 75018 PARIS, France
+                </span>
+               {eventDetails.address}
               </p>
-              <p>
-                {" "}
+              <p>                
                 <span className="pt-3 pb-5">
                   <AiOutlineCalendar size={25} />
-                </span>{" "}
-                From 01/10/2023 to 01/11/2023
+                </span>
+                From {eventDetails.start_date} to {eventDetails.end_date}
               </p>
-              <p>
-                {" "}
+              <p>                
                 <span className="pt-3 pb-5">
                   <GiTimeTrap size={25} />
-                </span>{" "}
-                Needed time: weekdays
+                </span>
+                Needed time: {eventDetails.neededTime}
               </p>
             </div>
             <div className="col-6">
-              <p>Slot remaining: 85</p>
-              <p>Volunteer applied: 94270</p>
-              <p>Points: 200</p>
+              <p>Slot remaining: {eventDetails.slotRemaining}</p>
+              <p>Volunteer applied: {eventDetails.volunteerApplied}</p>
+              <p>Points: {eventDetails.points}</p>
             </div>
           </div>
           <div className="button-approve mt-5">
